@@ -1,0 +1,33 @@
+{
+  "name": "myapp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "star": "nodejs ./bin/www",
+    "sup": "supervisor ./bin/www",
+    "supm": "supervisor -i node_modules ./bin/www",
+    "mysql": "node ./tasks/orm.js",
+    "prods": "webpack --config ./conf/webpack.js & supervisor ./bin/www",
+    "prod": "webpack --config ./conf/webpack.js "
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "^2.5.1",
+    "express": "~4.13.4",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "mysql": "^2.11.1",
+    "nodemailer": "^2.5.0",
+    "orm": "^3.1.0",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1"
+  }
+}
