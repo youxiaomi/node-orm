@@ -1,1 +1,0 @@
-cmd_/home/squid/study/myapp/node/out/Release/obj.target/tools/icu/libicudata.a := rm -f /home/squid/study/myapp/node/out/Release/obj.target/tools/icu/libicudata.a && ar crsT /home/squid/study/myapp/node/out/Release/obj.target/tools/icu/libicudata.a /home/squid/study/myapp/node/out/Release/obj.target/icudata/gen/icusmdt57_dat.o
