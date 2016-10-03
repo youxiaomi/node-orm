@@ -9,19 +9,31 @@ var controllers={}
 
 
 module.exports=function () {
+
     return new Promise(function (res,rej) {
-        require('../models/')().then(function(db){
-            var files=fs.readdirSync('./controllers');
-            (function (files) {
-                files.forEach(function (file) {
-                    if(file!=='index.js'){
-                        var name=file.match(/\w+(?=_)/)
-                        controllers[name]=require("./"+file)(db)
-                    }
-                });
-            })(files);
-            res(controllers)
-        })
+        // require('../models/')().then(function(db){
+
+        var files=fs.readdirSync('./controllers');
+        (function (files) {
+            var i=1
+            files.forEach(function (file) {
+                if(file!=='index.js'){
+                // if(file=='home_controller.js'){
+                    var name=file.match(/\w+(?=_)/)
+                    // controllers[name]=require("./"+file)()
+                    require("./"+file)().then(function (con) {
+                        i++
+                        controllers[name]=con
+                        if(files.length==i){
+                            res(controllers)
+                        }
+                    })
+                    // console.log(1)
+                }
+            });
+
+        })(files);
+        // })
     })
 }
 
